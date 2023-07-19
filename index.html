@@ -15,7 +15,7 @@
                 <div class="card-number">0000 0000 0000 0000</div>
                 <div class="card-info">
                     <div class="card-name">Damain Scott</div>
-                    <div class="card-expiry-date">00/00</div>
+                    <div class="card-expiry-date"><p>00</p>/<span id="yearDetails">00</span></div>
                 </div>
             </div>
             <div class="card-back-image">
@@ -26,32 +26,39 @@
         <div class="card-details">
             <form action="#">
                 <div class="card-input-box">
-                    <label for="name">cardholder name</label>
-                    <input type="text" id="name" name="name" placeholder="e.g. Damain Scott">
+                    <label for="">cardholder name</label>
+                    <input type="text" id="name" placeholder="e.g. Damain Scott">
                 </div>
-                <div class="card-input-box">
-                    <label for="number">card number</label>
-                    <input type="text" id="number" name="" placeholder="e.g. 1234 5678 9123 0000">
+                <div class="card-input-box" id="numberFormat">
+                    <label for="">card number</label>
+                    <input id="number" placeholder="e.g. 1234 5678 9123 0000">
                 </div>
                 <div class="card-input-box-3">
                     <div class="date-block">
-                        <label for="date">exp. date(mm/yy)</label>
+                        <label for="">exp. date(mm/yy)</label>
                         <div class="date-input">
                             <div class="month-input">
                                 <input type="number" id="month" placeholder="MM" min="1" max="12">
                             </div>
                             <div class="year-input">
-                                <input type="number" id="year" placeholder="YY" min="2020" max="2030">
+                                <input id="year" placeholder="YY">
                             </div>
                         </div>
                     </div>
                     <div class="cvc-block">
                         <label for="cvc">cvc</label>
-                        <input type="text" id="cvc" placeholder="e.g. 123">
+                        <input id="cvc" placeholder="e.g. 123">
                     </div>
                 </div>
+                <button type="submit" class="submit-btn" id="button">Confirm</button>
             </form>
-            <button type="submit" class="submit-btn">confirm</button>
+           
+            <div class="confirm">
+                <img src="images/icon-complete.svg" alt="">
+                <h1>thank you!</h1>
+                <p>We've added your card details</p>
+                <button class="btn">continue</button>
+            </div>
         </div>
     </div>
 
