@@ -25,6 +25,14 @@ const newElement = textNode => {
     return errorMessage
 }
 
+const newElement2 = textNode2 => {
+    const errorMessage = document.createElement('p')
+    errorMessage.classList.add('errorMessage')
+    const text = document.createTextNode(textNode2)
+    errorMessage.appendChild(text)
+    return errorMessage
+}
+
 cardName.addEventListener('input', addText)
 cardNumber.addEventListener('input', addNumber)
 cvc.addEventListener('input', addCvc)
@@ -88,12 +96,10 @@ function numberFormat() {
         const errorMessage = newElement('Wrong format, numbers only')
         const numberInfo = document.querySelector('#numberFormat')
         numberInfo.appendChild(errorMessage)
-        setTimeout(() => errorMessage.remove(), 5000);
     } else if(number === '') {
        const errorMessage = newElement('Please fill out this form')
         const numberInfo = document.querySelector('#numberFormat')
         numberInfo.appendChild(errorMessage)
-        setTimeout(() => errorMessage.remove(), 5000);
     }
 }
 
@@ -101,15 +107,13 @@ function dateFormat() {
     let date = cardYear.value
 
     if(date === '') {
-       const errorMessage = newElement("Can't be blank")
+        const errorMessage = newElement2("Can't be blank")
         const yearInfo = document.querySelector('.date-input')
         yearInfo.appendChild(errorMessage)
-        setTimeout(() => errorMessage.remove(), 5000);
     } else if(isNaN(date)) {
-        const errorMessage = newElement('Wrong format, numbers only')
+        const errorMessage = newElement2('Wrong format, numbers only')
         const yearInfo = document.querySelector('.date-input')
         yearInfo.appendChild(errorMessage)
-        setTimeout(() => errorMessage.remove(), 5000);
     }
 }
 
@@ -117,15 +121,13 @@ function cvcFormat() {
     let cvcNumber = cvc.value
 
     if(isNaN(cvcNumber)) {
-        const errorMessage = newElement('Numbers only')
+        const errorMessage = newElement2('Numbers only')
         const cvcInfo = document.querySelector('.cvc-block')
         cvcInfo.appendChild(errorMessage)
-        setTimeout(() => errorMessage.remove(), 5000);
     } else if(cvcNumber === '') {
-        const errorMessage = newElement("Can't be blank")
-       const cvcInfo = document.querySelector('.cvc-block')
+        const errorMessage = newElement2("Can't be blank")
+        const cvcInfo = document.querySelector('.cvc-block')
         cvcInfo.appendChild(errorMessage)
-        setTimeout(() => errorMessage.remove(), 5000);
     }
 }
 
