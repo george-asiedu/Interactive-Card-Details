@@ -174,13 +174,17 @@ body {
     margin-bottom: 40px;
 }
 
+.date-block {
+    display: flex;
+    flex-direction: column;
+}
+
 .date-block .date-input {
     width: 100%;
     display: flex;
     align-items: center;
     gap: .5rem;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
 }
 
 .date-input input {
@@ -192,7 +196,9 @@ body {
 }
 
 .cvc-block {
-    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 8px; */
 }
 
 .cvc-block input {
@@ -200,7 +206,6 @@ body {
     height: 40px;
     border: 1px solid var(--Light-grayish-violet);
     border-radius: 6px;
-    margin-top: 8px;
     padding: .5rem .8rem;
 }
 
@@ -228,21 +233,6 @@ input::placeholder {
 .confirm .btn:hover {
     background: hsl(249, 99%, 64%);
 }
-
-.error {
-    color: var(--Red);
-    font-size: .7rem;
-    margin-top: 5px;
-    font-weight: 500;
-}
-
-/* .errorMessage {
-    color: var(--Red);
-    font-size: .7rem;
-    font-weight: 500;
-    position: absolute;
-    top: 110%;
-} */
 
 .confirm {
     position: absolute;
@@ -295,4 +285,11 @@ input::placeholder {
     letter-spacing: 1px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.error {
+    color: var(--Red);
+    font-size: .7rem;
+    margin-top: 5px;
+    font-weight: 500;
 }
