@@ -85,21 +85,15 @@ function confirmForm(e) {
 function numberFormat() {
     let number = cardNumber.value
     if(isNaN(number)) {
-        const para = document.createElement('p')
-        para.classList.add('error')
-        const textNode1 = document.createTextNode('Wrong format, numbers only')
-        para.appendChild(textNode1)
-    
+        const errorMessage = newElement('Wrong format, numbers only')
         const numberInfo = document.querySelector('#numberFormat')
-        numberInfo.appendChild(para)
+        numberInfo.appendChild(errorMessage)
+        setTimeout(() => errorMessage.remove(), 5000);
     } else if(number === '') {
-        const para = document.createElement('p')
-        para.classList.add('error')
-        const textNode1 = document.createTextNode('Please fill out this form')
-        para.appendChild(textNode1)
-    
+       const errorMessage = newElement('Please fill out this form')
         const numberInfo = document.querySelector('#numberFormat')
-        numberInfo.appendChild(para)
+        numberInfo.appendChild(errorMessage)
+        setTimeout(() => errorMessage.remove(), 5000);
     }
 }
 
@@ -107,21 +101,15 @@ function dateFormat() {
     let date = cardYear.value
 
     if(date === '') {
-        const errorText = document.createElement('p') 
-        errorText.classList.add('errorMessage')
-        const textNode2 = document.createTextNode("Can't be blank")
-        errorText.appendChild(textNode2)
-
+       const errorMessage = newElement("Can't be blank")
         const yearInfo = document.querySelector('.date-input')
-        yearInfo.appendChild(errorText)
+        yearInfo.appendChild(errorMessage)
+        setTimeout(() => errorMessage.remove(), 5000);
     } else if(isNaN(date)) {
-        const errorText2 = document.createElement('p') 
-        errorText2.classList.add('errorMessage')
-        const textNode3 = document.createTextNode("Wrong format, numbers only")
-        errorText2.appendChild(textNode3)
-
+        const errorMessage = newElement('Wrong format, numbers only')
         const yearInfo = document.querySelector('.date-input')
-        yearInfo.appendChild(errorText2)
+        yearInfo.appendChild(errorMessage)
+        setTimeout(() => errorMessage.remove(), 5000);
     }
 }
 
@@ -129,21 +117,15 @@ function cvcFormat() {
     let cvcNumber = cvc.value
 
     if(isNaN(cvcNumber)) {
-        const errorText2 = document.createElement('p') 
-        errorText2.classList.add('errorMessage')
-        const textNode3 = document.createTextNode("Numbers only")
-        errorText2.appendChild(textNode3)
-
+        const errorMessage = newElement('Numbers only')
         const cvcInfo = document.querySelector('.cvc-block')
-        cvcInfo.appendChild(errorText2)
+        cvcInfo.appendChild(errorMessage)
+        setTimeout(() => errorMessage.remove(), 5000);
     } else if(cvcNumber === '') {
-        const errorText2 = document.createElement('p') 
-        errorText2.classList.add('errorMessage')
-        const textNode3 = document.createTextNode("Can't be blank")
-        errorText2.appendChild(textNode3)
-
-        const cvcInfo = document.querySelector('.cvc-block')
-        cvcInfo.appendChild(errorText2)
+        const errorMessage = newElement("Can't be blank")
+       const cvcInfo = document.querySelector('.cvc-block')
+        cvcInfo.appendChild(errorMessage)
+        setTimeout(() => errorMessage.remove(), 5000);
     }
 }
 
