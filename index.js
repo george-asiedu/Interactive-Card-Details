@@ -17,6 +17,14 @@ const arrayList = [
     cardNameInput, cardNumberInput, cardCvcInput, cardYearInput, cardMonthInput
 ]
 
+const newElement = textNode => {
+    const errorMessage = document.createElement('p')
+    errorMessage.classList.add('error')
+    const text = document.createTextNode(textNode)
+    errorMessage.appendChild(text)
+    return errorMessage
+}
+
 cardName.addEventListener('input', addText)
 cardNumber.addEventListener('input', addNumber)
 cvc.addEventListener('input', addCvc)
@@ -49,13 +57,10 @@ function confirmForm(e) {
     let x = cardName.value
     
     if(x === '') {
-       const newElement = document.createElement('p')
-       newElement.classList.add('error')
-       const textNode = document.createTextNode('Please fill out this form')
-       newElement.appendChild(textNode)
-
+       const errorMessage = newElement('Please fill out this form')
        const cardNameInfo = document.querySelector('.card-input-box');
-       cardNameInfo.appendChild(newElement);
+       cardNameInfo.appendChild(errorMessage);
+       setTimeout(() => errorMessage.remove(), 5000);
        button.removeEventListener('click', confirmForm)
        numberFormat()
        dateFormat()
@@ -64,7 +69,7 @@ function confirmForm(e) {
         confirmMessage.style.display = 'block'
         form.style.display = 'none'
         const btn = document.querySelector('.btn') 
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', () => {
             confirmMessage.style.display = 'none'
             form.style.display = 'block'
             for(let i = 0; i < formInput.length; i++)  {
