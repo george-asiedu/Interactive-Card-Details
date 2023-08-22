@@ -5,6 +5,7 @@ const month = document.querySelector('#month')
 const year = document.querySelector('#year')
 const cvcInput = document.querySelector('#cvc')
 const button = document.querySelector('#button')
+const thankyou = document.querySelector('.btn')
 
 const newElement = textNode => {
     const errorMessage = document.createElement('p')
@@ -13,6 +14,31 @@ const newElement = textNode => {
     errorMessage.appendChild(text)
     return errorMessage
 }
+
+input[0].addEventListener('input', () => {
+    const name = document.querySelector('.card-name')
+    name.innerHTML = input[0].value
+})
+
+input[1].addEventListener('input', () => {
+    const number = document.querySelector('.card-number')
+    number.innerHTML = input[1].value
+})
+
+month.addEventListener('input', () => {
+    const expiry = document.querySelector('.month-details')
+    expiry.innerHTML = month.value
+})
+
+year.addEventListener('input', () => {
+    const expiry = document.querySelector('.year-details')
+    expiry.innerHTML = year.value
+})
+
+cvcInput.addEventListener('input', () => {
+    const expiry = document.querySelector('.card-cvc')
+    expiry.innerHTML = cvcInput.value
+})
 
 button.addEventListener('click', () => {
     validateName()
@@ -27,6 +53,15 @@ button.addEventListener('click', () => {
         confirm.style.display = 'block'
         form.style.display = 'none'
     }
+})
+
+thankyou.addEventListener('click', () => {
+    const confirm = document.querySelector('.confirm')
+    const form = document.querySelector('form')
+    confirm.style.display = 'none'
+    form.style.display = 'block'
+
+    
 })
 
 const validateName = () => {
@@ -74,28 +109,3 @@ const validateCvc = () => {
         setTimeout(() => errorMessage.remove(), 3000)
     }
 }
-
-input[0].addEventListener('input', () => {
-    const name = document.querySelector('.card-name')
-    name.innerHTML = input[0].value
-})
-
-input[1].addEventListener('input', () => {
-    const number = document.querySelector('.card-number')
-    number.innerHTML = input[1].value
-})
-
-month.addEventListener('input', () => {
-    const expiry = document.querySelector('.month-details')
-    expiry.innerHTML = month.value
-})
-
-year.addEventListener('input', () => {
-    const expiry = document.querySelector('.year-details')
-    expiry.innerHTML = year.value
-})
-
-cvcInput.addEventListener('input', () => {
-    const expiry = document.querySelector('.card-cvc')
-    expiry.innerHTML = cvcInput.value
-})
