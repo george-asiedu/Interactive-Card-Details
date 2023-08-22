@@ -36,8 +36,8 @@ year.addEventListener('input', () => {
 })
 
 cvcInput.addEventListener('input', () => {
-    const expiry = document.querySelector('.card-cvc')
-    expiry.innerHTML = cvcInput.value
+    const cvc = document.querySelector('.card-cvc')
+    cvc.innerHTML = cvcInput.value
 })
 
 button.addEventListener('click', () => {
@@ -58,10 +58,20 @@ button.addEventListener('click', () => {
 thankyou.addEventListener('click', () => {
     const confirm = document.querySelector('.confirm')
     const form = document.querySelector('form')
+    const name = document.querySelector('.card-name')
+    const number = document.querySelector('.card-number')
+    const month = document.querySelector('.month-details')
+    const year = document.querySelector('.year-details')
+    const cvc = document.querySelector('.card-cvc')
+
     confirm.style.display = 'none'
     form.style.display = 'block'
 
-    
+    name.innerHTML = 'DAMAIN SCOTT'
+    number.innerHTML = '0000 0000 0000 0000'
+    month.innerHTML = '00'
+    year.innerHTML = '00'
+    cvc.innerHTML = '000'
 })
 
 const validateName = () => {
