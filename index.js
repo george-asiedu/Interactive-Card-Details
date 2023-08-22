@@ -84,3 +84,13 @@ input[1].addEventListener('input', () => {
     const number = document.querySelector('.card-number')
     number.innerHTML = input[1].value
 })
+
+month.addEventListener('input', () => {
+    const expiry = document.querySelector('.month-details')
+    expiry.innerHTML = month.value
+})
+
+year.addEventListener('input', () => {
+    const expiry = document.querySelector('.year-details')
+    expiry.innerHTML = year.value
+})
