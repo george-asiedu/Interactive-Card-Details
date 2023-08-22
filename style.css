@@ -320,10 +320,35 @@ input::placeholder {
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 0rem;
     }
 
     .card-images {
-        width: 40%;
+        width: 100%;
+        height: 35vh;
+    }
+
+    .card-front-image {
+        top: 55%;
+        left: 5%;
+        z-index: 100;
+    }
+
+    .card-front-image .logo {
+        margin-bottom: 30px;
+    }
+
+    .card-front-image .card-number {
+        font-size: 16px;
+    }
+
+    .card-back-image {
+        top: 14%;
+        height: 170px;
+    }
+
+    .card-back-image .card-cvc {
+        top: 44%;
+        font-size: 14px;
     }
 }
