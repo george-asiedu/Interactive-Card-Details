@@ -94,3 +94,8 @@ year.addEventListener('input', () => {
     const expiry = document.querySelector('.year-details')
     expiry.innerHTML = year.value
 })
+
+cvcInput.addEventListener('input', () => {
+    const expiry = document.querySelector('.card-cvc')
+    expiry.innerHTML = cvcInput.value
+})
