@@ -37,7 +37,7 @@ body {
     height: auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 5rem;
+    gap: 5rem;
 }
 
 .card-images {
@@ -184,7 +184,6 @@ body {
     display: flex;
     align-items: center;
     gap: .5rem;
-    /* margin-bottom: 8px; */
 }
 
 .date-input input {
@@ -198,7 +197,6 @@ body {
 .cvc-block {
     display: flex;
     flex-direction: column;
-    /* margin-bottom: 8px; */
 }
 
 .cvc-block input {
@@ -292,4 +290,40 @@ input::placeholder {
     font-size: .7rem;
     margin-top: 5px;
     font-weight: 500;
+}
+
+/* tablet media query */
+@media (max-width: 998px) {
+    .card-front-image {
+        width: 300px;
+        left: 15%;
+    }
+
+    .card-front-image .logo {
+        width: 50px;
+    }
+
+    .card-front-image .card-number {
+        font-size: 18px;
+    }
+
+    .card-back-image {
+        width: 300px;
+        top: 50%;
+        left: 15%;
+    }
+}
+
+/* large mobile phones media query */
+@media (max-width: 600px) {
+    .card-components {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .card-images {
+        width: 40%;
+    }
 }
