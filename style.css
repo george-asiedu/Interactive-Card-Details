@@ -366,4 +366,54 @@ input::placeholder {
     .card-details form .card-input-box {
         margin-bottom: 20px;
     }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    .confirm {
+        width: 100%;
+        top: 15%;
+        left: 0%;
+        padding:  0rem 1rem;
+    }
+
+    .confirm .btn {
+        width: 100%;
+        height: 50px;
+    }
+}
+
+@media (max-width: 360px) {
+    .card-front-image,
+    .card-back-image {
+        width: 230px;
+    }
+
+    .card-front-image {
+        top: 57%;
+    }
+
+    .card-back-image {
+        height: 120px;
+    }
+
+    .card-front-image .card-number,
+    .card-images .card-info {
+        font-size: 11px;
+    }
+
+    .card-front-image .card-number {
+        margin-bottom: 15px;
+    }
+
+    .card-back-image .card-cvc {
+        font-size: 11px;
+        left: 75%;
+    }
+
+    .card-details {
+        width: 100%;
+        padding-top: 6rem;
+    }
 }
