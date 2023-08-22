@@ -320,7 +320,7 @@ input::placeholder {
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 0rem;
+        gap: 2rem;
     }
 
     .card-images {
@@ -329,7 +329,7 @@ input::placeholder {
     }
 
     .card-front-image {
-        top: 55%;
+        top: 52%;
         left: 5%;
         z-index: 100;
     }
@@ -344,11 +344,26 @@ input::placeholder {
 
     .card-back-image {
         top: 14%;
-        height: 170px;
+        height: 160px;
     }
 
     .card-back-image .card-cvc {
         top: 44%;
         font-size: 14px;
+    }
+
+    .card-details {
+        width: 100%;
+        height: 65vh;
+    } 
+
+    .card-details form {
+        width: 100%;
+        margin: 0;
+        padding: 0px 15px;
+    }
+
+    .card-details form .card-input-box {
+        margin-bottom: 20px;
     }
 }
