@@ -80,4 +80,7 @@ input[0].addEventListener('input', () => {
     name.innerHTML = input[0].value
 })
 
-inp
+input[1].addEventListener('input', () => {
+    const number = document.querySelector('.card-number')
+    number.innerHTML = input[1].value
+})
