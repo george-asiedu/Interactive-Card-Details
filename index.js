@@ -6,10 +6,6 @@ const year = document.querySelector('#year')
 const cvcInput = document.querySelector('#cvc')
 const button = document.querySelector('#button')
 
-// const arrayList = [
-//     cardNameInput, cardNumberInput, cardCvcInput, cardYearInput, cardMonthInput
-// ]
-
 const newElement = textNode => {
     const errorMessage = document.createElement('p')
     errorMessage.classList.add('error')
@@ -24,7 +20,8 @@ button.addEventListener('click', () => {
     validateDate()
     validateCvc()
 
-    if(input.values !== '' && dateInput.values !== '' && cvcInput !== '') {
+    if(input.values !== '' && month.value !== '' &&
+        year.value !== '' && cvcInput !== '' ) {
         const confirm = document.querySelector('.confirm')
         const form = document.querySelector('form')
         confirm.style.display = 'block'
@@ -46,7 +43,7 @@ const validateNumber = () => {
         inputBox[1].appendChild(errorMessage);
         setTimeout(() => errorMessage.remove(), 3000)
     } else if(isNaN(input[1].value)) {
-        const errorMessage = newElement('Numbers only')
+        const errorMessage = newElement('Wrong format, numbers only')
         inputBox[1].appendChild(errorMessage)
         setTimeout(() => errorMessage.remove(), 3000)
     }
@@ -58,7 +55,7 @@ const validateDate = () => {
         dateBlock.appendChild(errorMessage)
         setTimeout(() => errorMessage.remove(), 3000)
     } else if(isNaN(month.value) || isNaN(year.value) || month.value >= 12) {
-        const errorMessage = newElement('Numbers only')
+        const errorMessage = newElement('Wrong format, numbers only')
         dateBlock.appendChild(errorMessage)
         setTimeout(() => errorMessage.remove(), 3000)
     }
@@ -71,9 +68,16 @@ const validateCvc = () => {
         block.appendChild(errorMessage)
         setTimeout(() => errorMessage.remove(), 3000)
     } else if(isNaN(cvcInput.value)) {
-        const errorMessage = newElement("Numbers only")
+        const errorMessage = newElement("Wrong format, numbers only")
         const block = document.querySelector('.cvc-block')
         block.appendChild(errorMessage)
         setTimeout(() => errorMessage.remove(), 3000)
     }
 }
+
+input[0].addEventListener('input', () => {
+    const name = document.querySelector('.card-name')
+    name.innerHTML = input[0].value
+})
+
+inp
